@@ -1,0 +1,80 @@
+<div class="outer">
+	<div class="container loginContainer">
+		<h2 class="title">User Registration</h2>
+		<div class="main">
+			<form name="userform" class="subform" novalidate>
+				<table class="main_table">
+					<tbody>
+						<tr class="odd">
+							<td class="titletd"><span class="subtitle">Name:<span
+									class="required">*</span></span></td>
+							<td><input class="subinput" type="text" name="firstName"
+								data-ng-model="user.username" required /></td>
+							<td class="error">
+								<div id="errorBox" class="errordiv"
+									data-ng-if="userform.firstName.$error.required && !userform.firstName.$pristine">required
+									!</div>
+							</td>
+						</tr>
+
+						<tr class="even">
+							<td class="titletd"><span class="subtitle">Email:<span
+									class="required">*</span></span></td>
+							<td><input type="email" class="subinput" name="email"
+								data-ng-model="user.email" required /></td>
+							<td class="error">
+								<div id="errorBox" class="errordiv"
+									data-ng-if="userform.email.$error.required && !userform.email.$pristine">email
+									required</div>
+								<div id="errorBox" class="errordiv"
+									data-ng-if="userform.email.$error.email">email should be
+									[example@xxx.com]</div>
+							</td>
+						</tr>
+
+						<tr class="odd">
+							<td class="titletd"><span class="subtitle">Password:<span
+									class="required">*</span></span></td>
+							<td><input type="password" class="subinput" name="password"
+								data-ng-model="user.password"
+								data-ng-class="{'ng-invalid':userform.confirmPassword.$error.match}"
+								required /></td>
+							<td class="error">
+								<div id="errorBox" class="errordiv"
+									data-ng-if="userform.password.$error.required && !userform.password.$pristine">required!</div>
+							</td>
+						</tr>
+
+						<tr class="even">
+							<td class="titletd"><span class="subtitle">Confirm
+									Password:<span class="required">*</span>
+							</span></td>
+							<td><input type="password" class="subinput" name="confirmPassword"
+								data-ng-model="confirmPassword" data-ui-validate=" '$value==password' "
+								data-ui-validate-watch=" 'password' " required /></td>
+							<td class="error">
+								<div id="errorBox" class="errordiv"
+									data-ng-if="userform.confirmPassword.$error.required && !userform.confirmPassword.$pristine">required!</div>
+								<!-- <div id="errorBox" class="errordiv" ng-if="userform.confirmPassword.$error.match">not matching..</div> -->
+							</td>
+
+						</tr>
+
+						<tr class="odd">
+							<td class="titletd"><span class="subtitle">Gender: </span></td>
+							<td><input type="radio" name="status" required="required" data-ng-model="user.gender" value="Male"/>Male
+								<input type="radio" name="status" required="required" data-ng-model="user.gender" value="Female"/>Female</td>
+						</tr>
+
+						<tr>
+							<td class="titletd"></td>
+							<td><input type="submit" value="Submit" class="subbutton" data-ng-click="submitUserForm()"
+								data-ng-disabled="userform.$invalid" /> <input type="reset"
+								value="Reset" class="subbutton" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+	</div>
+</div>

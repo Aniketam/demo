@@ -1,0 +1,182 @@
+<div class="outer">
+	<div class="container">
+		<h2 class="title">Client Registration</h2>
+		<div class="main">
+			<div class="CForm">
+			<form name="clientForm" class="subform" novalidate>
+				<table class="main_table">
+					<tbody>
+
+						<tr class="odd">
+							<td class="titletd"><span class="subtitle">User Name:<span
+									class="required">*</span></span></td>
+							<td><input class="subinput" name="name" id="name" size="30"
+								data-ng-model="client.name" data-ng-minlength="3"
+								data-ng-maxlength="8" required /></td>
+							<td class="error">
+								<div id="errorBox" class="errordiv"
+									data-ng-if="clientForm.name.$error.minlength ">username
+									length must greater than 3</div>
+								<div id="errorBox" class="errordiv"
+									data-ng-if="clientForm.name.$error.maxlength">username
+									length must less than 8</div>
+								<div id="errorBox" class="errordiv"
+									data-ng-if="clientForm.name.$error.required && !clientForm.name.$pristine">username
+									required</div>
+							</td>
+						</tr>
+						<tr class="even">
+							<td class="titletd"><span class="subtitle">Address:<span
+									class="required">*</span>
+							</span></td>
+							<td><textarea rows="4" cols="30" class="subinput"
+									name="address" data-ng-model="client.address" required></textarea></td>
+							<td class="error">
+								<div id="errorBox" class="errordiv"
+									data-ng-if="clientForm.address.$error.required && !clientForm.address.$pristine">address
+									required</div>
+							</td>
+						</tr>
+						<tr class="odd">
+							<td class="titletd"><span class="subtitle">Email:<span
+									class="required">*</span></span></td>
+							<td><input type="email" class="subinput" name="email"
+								size="30" data-ng-model="client.email" required /></td>
+							<td class="error">
+								<div id="errorBox" class="errordiv"
+									data-ng-if="clientForm.email.$error.required && !clientForm.email.$pristine">email
+									required</div>
+								<div id="errorBox" class="errordiv"
+									data-ng-if="clientForm.email.$error.email">email should
+									be [example@xxx.com]</div>
+							</td>
+						</tr>
+						<tr class="even">
+							<td class="titletd"><span class="subtitle">Domain:<span
+									class="required">*</span></span></td>
+							<td><select class="subselect" name="domain" id="domain"
+								data-ng-model="client.domain">
+									<option>Health care</option>
+									<option>Banking</option>
+									<option>Media</option>
+							</select></td>
+							<td class="error"><div class="required" id="domainError"></div></td>
+						</tr>
+						<tr class="odd">
+							<td class="titletd"><span class="subtitle">Description:
+							</span></td>
+							<td><input class="subinput" name="description"
+								data-ng-model="client.description" /></td>
+							<td class="error"></td>
+						</tr>
+						<tr class="even">
+							<td class="titletd"><span class="subtitle">Revenue:<span
+									class="required">*</span>
+							</span></td>
+							<td><input class="subinput" name="revenue" id="revenue"
+								size="30" data-ng-model="client.revenue" required pattern="^[0-9]*$" /></td>
+							<td class="error">
+								<div id="errorBox" class="errordiv"
+									data-ng-if="clientForm.revenue.$error.required && !clientForm.revenue.$pristine">
+									required</div>
+									<div id="errorBox" class="errordiv" data-ng-if="clientForm.revenue.$error.pattern">
+									should be a numeric
+								</div>
+							</td>
+						</tr>
+						<tr class="odd">
+							<td class="titletd"><span class="subtitle">Employees No:<span
+									class="required">*</span></span></td>
+							<td><input class="subinput" name="emp" id="emp" size="30"
+								data-ng-model="client.employees" required pattern="^[0-9]*$"/></td>
+							<td class="error">
+								<div id="errorBox" class="errordiv"
+									data-ng-if="clientForm.emp.$error.required && !clientForm.emp.$pristine">
+									required</div>
+									<div id="errorBox" class="errordiv" data-ng-if="clientForm.emp.$error.pattern">
+									should be a numeric
+								</div>
+							</td>
+						</tr>
+						<tr class="even">
+							<td class="titletd"><span class="subtitle">Presence:
+							</span></td>
+							<td><input class="subinput" name="presence" id="presence"
+								size="30" data-ng-model="client.presence" /></td>
+							<td class="error"><div class="required" id="presenceError"></div></td>
+						</tr>
+						<tr class="odd">
+							<td class="titletd"><span class="subtitle">CEO:<span
+									class="required">*</span></span></td>
+							<td><input class="subinput" name="ceo" id="ceo" size="30"
+								data-ng-model="client.ceo" required /></td>
+							<td class="error">
+								<div id="errorBox" class="errordiv"
+									data-ng-if="clientForm.ceo.$error.required && !clientForm.ceo.$pristine">required</div>
+							</td>
+						</tr>
+						<tr class="even">
+							<td class="titletd"><span class="subtitle">CTO:</span></td>
+							<td><input class="subinput" name="cto" id="cto"
+								data-ng-model="client.cto" size="30" /></td>
+							<td class="error"><div class="required" id="ctoError"></div></td>
+						</tr>
+						<tr class="odd">
+							<td class="titletd"><span class="subtitle">Contact:<span
+									class="required">*</span></span></td>
+							<td><input class="subinput" name="contact" id="contact"
+								data-ng-model="client.contact" size="30" data-ng-model="contact"
+								required pattern="^[0-9]*$" data-ng-minlength="10"
+								data-ng-maxlength="10" /></td>
+							<td class="error">
+								<div id="errorBox" class="errordiv"
+									data-ng-if="clientForm.contact.$error.required && !clientForm.contact.$pristine">required</div>
+									<div id="errorBox" class="errordiv"
+									data-ng-if="clientForm.contact.$error.pattern">enter only numbers</div>
+									<div id="errorBox" class="errordiv"
+									data-ng-if="clientForm.contact.$error.minlength">must be of size 10</div>
+									<div id="errorBox" class="errordiv"
+									data-ng-if="clientForm.contact.$error.maxlength">must be of size 10</div>
+							</td>
+						</tr>
+						<tr class="even">
+							<td class="titletd"><span class="subtitle">Office:<span
+									class="required">*</span></span></td>
+							<td><input class="subinput" name="offices" id="office"
+								size="30" data-ng-model="client.offices" required /></td>
+							<td class="error">
+								<div id="errorBox" class="errordiv"
+									data-ng-if="clientForm.offices.$error.required && !clientForm.offices.$pristine">required</div>
+							</td>
+						</tr>
+						<tr class="odd">
+							<td class="titletd"><span class="subtitle">Status:<span
+									class="required">*</span></span></td>
+							<td><select class="subselect" name="status" id="status"
+								data-ng-model="client.status">
+									<option>Active</option>
+									<option>In-Active</option>
+
+							</select></td>
+							<td class="error"><div class="required" id="statusError"></div></td>
+						</tr>
+						<tr class="even">
+							<td class="titletd"></td>
+							<td><input type="submit"
+								value="submit" class="subbutton"
+								data-ng-disabled="clientForm.$invalid"
+								data-ng-click="submitClientForm()" /> <input type="reset"
+								value="Reset" class="subbutton" /></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+			</div>
+			<div class="CMsg">
+				<h3 align="center"> You Have Submitted Successfully...!!!!</h3>
+			</div>
+		</div>
+	</div>
+</div>
+

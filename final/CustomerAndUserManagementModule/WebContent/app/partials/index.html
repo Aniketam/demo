@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AngularJS Routing example</title>
+<script src="../lib/angular/angular.js"></script>
+<script src="../lib/angular/angular-loader.js"></script>
+<script src="../lib/angular/angular-resource.js"></script>
+<script src="../lib/angular/angular-route.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/controllers.js"></script>
+<script src="../js/jquery_min.js"></script>
+<script src="../js/services.js"></script>
+<link href="../css/Style.css" rel="stylesheet" />
+<link href="../css/bootstrap.css" rel="stylesheet" />
+<link
+	href="http://fonts.googleapis.com/css?family=Roboto:400,400italic,300,500,700"
+	rel='stylesheet' type='text/css'>
+<link href="http://fonts.googleapis.com/css?family=Ubuntu:400,500,700"
+	rel='stylesheet' type='text/css' />
+</head>
+
+<body class="menu" data-ng-app="Module3">
+
+<div>
+	<div class="login" id="adminSuc">
+		<ul class="menu nav">
+			<li><a href="#UserRegistration"> Sign Up as User </a></li>
+			<li><a href="#adminLogin" > Admin Login </a></li>
+			<li class="right"><a href="#login"> User Login </a></li>			
+		</ul>
+		<div class="Content" data-ng-view></div>
+		<div class="clr"></div>
+		<input type="hidden" id="Scope1" value="false"/>
+		<input type="hidden" id="Scope2" value="false"/>
+	</div>
+	<div class="AfterLogin" >
+	<div class="sidebar">
+		
+		<ul class="nav nav-pills nav-stacked">
+			<li><a href="#ClientRegistration"> Client Registration </a></li>
+			<li><a href="#group"> Add Group </a></li>
+			<li><a href="#searchClient"> Search Client </a></li>
+			<li><a href="#searchUser"> Search User </a></li>
+			<li><a href="#searchgroup"> Search Group </a></li>
+			<li><a href="#logout"> Logout </a></li>
+		</ul>
+	</div>
+	<div class="Content Contentdone" data-ng-view></div>
+	<div class="clr"></div>
+	</div>
+	<div class="AfterUserLogin" >
+	<div class="sidebar">
+		
+		<ul class="nav nav-pills nav-stacked">
+			<li><a href="#ClientRegistration"> Client Registration </a></li>
+			<li><a href="#searchClient"> Search Client </a></li>
+			<!--  <li><a href="#group"> Add Group </a></li>			
+			<li><a href="#searchUser"> Search User </a></li>
+			<li><a href="#searchgroup"> Search Group </a></li>-->
+			<li><a href="#logout"> Logout </a></li>
+		</ul>
+	</div>
+	<div class="Content Contentdone1" data-ng-view></div>
+	<div class="clr"></div>
+	</div>
+	<div class="logout">
+		<div data-ng-view></div>
+	<div class="clr"></div>
+	</div>
+</div>
+</body>
+
+</html>

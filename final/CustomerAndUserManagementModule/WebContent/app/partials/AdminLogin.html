@@ -1,0 +1,45 @@
+<div class="outer">
+	<div class="container loginContainer">
+		<h1 class="title">Login as Admin</h1>
+		<div class="main">
+			<form name="loginform" class="subform" novalidate>
+				<table class="main_table">
+					<tbody>
+
+						<tr class="odd">
+							<td class="titletd"><span class="subtitle">User Name:<span
+									class="required">*</span>
+							</span></td>
+							<td><input type="text" class="subinput" name="username"
+								data-ng-model="admin.username" required /></td>
+							<td class="error">
+								<div id="errorBox" class="errordiv"
+									data-ng-if="loginform.username.$error.required && !loginform.username.$pristine">username
+									required</div>
+							</td>
+						</tr>
+						<tr class="even">
+							<td class="titletd"><span class="subtitle">Password:<span
+									class="required">*</span></span></td>
+							<td><input type="password" class="subinput" name="password"
+								data-ng-model="admin.password" required /></td>
+							<td class="error">
+								<div id="errorBox" class="errordiv"
+									data-ng-if="loginform.password.$error.required && !loginform.password.$pristine">password
+									required</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="titletd"></td>
+							<td><input type="submit" value="Login" class="subbutton"
+								data-ng-disabled="loginform.$invalid"
+								data-ng-click="adminLoginForm()" id="Adminlog"/> <input type="reset"
+								value="Reset" class="subbutton" data-ng-click="reset()" /></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,54 @@
+<div class="outer">
+	<div class="container">
+		<h2 class="title">
+			<span>Search Client By Name:</span> <input name="clientName"
+				data-ng-model="clientName" class="subinput">
+			<button data-ng-click="changeClientName()">Search</button>
+
+			<!-- ng-change="changeClientName()"> -->
+		</h2>
+		<div class="table-responsive">
+			<form name="roleform" class="subform" action="">
+				<table class="table table-striped table-bordered">
+					<tbody>
+						<tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Address</th>
+							<th>Email</th>
+							<th>Domain</th>
+							<th>Description</th>
+							<th>Revenue</th>
+							<th>Employees</th>
+							<th>Presence</th>
+							<th>CEO</th>
+							<th>CTO</th>
+							<th>Contact</th>
+							<th>Offices</th>
+							<th>Status</th>
+							<th>Operations</th>
+						</tr>
+						<tr data-ng-repeat="client in allclients">
+							<td>{{client.id}}</td>
+							<td>{{client.name}}</td>
+							<td>{{client.address}}</td>
+							<td>{{client.email}}</td>
+							<td>{{client.domain}}</td>
+							<td>{{client.description}}</td>
+							<td>{{client.revenue}}</td>
+							<td>{{client.employees}}</td>
+							<td>{{client.presence}}</td>
+							<td>{{client.ceo}}</td>
+							<td>{{client.cto}}</td>
+							<td>{{client.contact}}</td>
+							<td>{{client.offices}}</td>
+							<td>{{client.status}}</td>
+							<td><a href="#editClient/{{client.id}}" class="subbutton">Edit</a>
+								<a data-ng-click="removeClient(client)" class="subbutton">Delete</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+	</div>
+</div>

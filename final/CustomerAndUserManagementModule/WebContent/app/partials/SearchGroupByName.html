@@ -1,0 +1,33 @@
+<div class="outer">
+	<div class="container">
+		<h2 class="title">
+			Search Group By Name: <input type="text" name="groupName"
+				data-ng-model="groupName" class="subinput">
+			<button data-ng-click="changeGroupName()">Search</button>
+		</h2>
+		<div class="table-responsive">
+			<table class="table table-striped table-bordered">
+				<tbody>
+					<tr>
+						<th>Group ID</th>
+						<th>Group Name</th>
+						<th>Description</th>
+						<th>Status</th>
+						<th>Operations</th>
+					</tr>
+					<tr data-ng-repeat="group in allGroups">
+						<td>{{group.gid}}</td>
+						<td>{{group.name}}</td>
+						<td>{{group.description}}</td>
+						<td>{{group.status}}</td>
+						<td><a href="#editgroup/{{group.gid}}" class="subbutton">Edit</a>
+							<a data-ng-click="RemoveGroup(group)" class="subbutton">Delete</a>
+							<!-- <a href="#addMember/{{group.gid}}" class="subbutton">Add Members</a>
+							-->
+							</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
