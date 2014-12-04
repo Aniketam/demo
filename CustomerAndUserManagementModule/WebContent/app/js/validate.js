@@ -313,10 +313,16 @@ function nameValidate()
 	var name=document.forms["loginform"]["username"].value;
 	if (name == "")
 	{
+		alert("inside blank");
 		status="";
 		 document.getElementById("errorBox").innerHTML = "field should not be empty";
 		 /*document.getElementsByName("username")[0].style.background= "red";*/
 		 return false;
+	}
+	else if(name == null)
+	{
+		alert("inside null");
+		status="full";
 	}
 	else
 		{
@@ -331,6 +337,11 @@ function passwordValidate()
 		status="";
 		document.getElementById("errorBox1").innerHTML = "field should not be empty";
 		return false; 
+	}
+	else if(password == null)
+	{
+		alert("inside null");
+		status="full";
 	}
 	else
 	{

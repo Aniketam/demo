@@ -1,6 +1,11 @@
 package com.alm.tests;
 
 import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.After;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,13 +26,29 @@ public class TestClientDAO {
 	@Qualifier("ClientDAO")
 	private IClientDAO clntdao;
 
-	private static ClientPOJO client;
+	private ClientPOJO client;
+	private ClientPOJO clientafter;
 
 	@BeforeClass
 	public static void beforeClass() {
-		client = new ClientPOJO();
+		//client = new ClientPOJO();
+		System.out.println("Inside beforeclass....");
 	}
-
+	
+	@Before
+    public void setUp() throws ALMException{
+        System.out.println("@Before - setUp");        
+        List<ClientPOJO> list = clntdao.allClient();	
+        client = list.get(0);
+        clientafter = list.get(0);
+    }
+	
+	@After
+    public void tearDown() {
+        System.out.println("@After - tearDown");
+       clntdao.registerClient(clientafter);
+    }
+	
 	@Test
 	public void testRegisterClient() {
 		client=clntdao.registerClient(client);

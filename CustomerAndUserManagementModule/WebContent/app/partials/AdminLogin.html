@@ -14,7 +14,7 @@
 								data-ng-model="admin.username" required /></td>
 							<td class="error">
 								<div id="errorBox" class="errordiv"
-									data-ng-if="loginform.username.$error.required && !loginform.username.$pristine">username
+									data-ng-if="(loginform.username.$error.required && !loginform.username.$pristine)">username
 									required</div>
 							</td>
 						</tr>
@@ -25,7 +25,7 @@
 								data-ng-model="admin.password" required /></td>
 							<td class="error">
 								<div id="errorBox" class="errordiv"
-									data-ng-if="loginform.password.$error.required && !loginform.password.$pristine">password
+									data-ng-if="(loginform.password.$error.required && !loginform.password.$pristine)">password
 									required</div>
 							</td>
 						</tr>

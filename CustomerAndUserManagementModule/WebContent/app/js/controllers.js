@@ -1,6 +1,5 @@
 var role;
 var a;
-
 /*--------------------Client----------------------------------------------*/
 
 //Submit Client Details Controller
@@ -112,7 +111,12 @@ Module3.controller("SubmitUserDetails", [ '$scope', '$resource', 'userService',
 			$scope.submitUserForm = function() {
 				userService.submit($scope.user, function(responsedata) {
 					if (responsedata.result == "true")
+						{
 						alert("Submited Successfully...!!!!");
+						$scope.user = null;
+						$scope.confirmPassword = null;
+						$scope.userform.$setPristine();
+						}
 				}, function() {
 				});
 			};
@@ -184,12 +188,20 @@ Module3.controller("adminLoginController", [
 					console.log('sucessfully entered');
 					if (responsedata.result == "true") {
 						console.log('true');
-						$scope.adminSuccess = true;
+						//$scope.adminSuccess = true;
 						document.getElementById("Scope1").setAttribute("value",true);
 						//document.getElementById("adminSucLog").setAttribute("ng-show",true);
 						console.log("HI...chkng flag "+ $scope.adminSuccess);
 						role = 'admin';
 					}
+					else
+						{
+						alert("Login Failed..");
+						$scope.admin = null;
+						//$scope.admin.password = null;
+						$scope.loginform.$setPristine();
+						}
+					
 					a = $('#Scope1').val();
 					//alert(a);
 				  	if(a == 'true')
@@ -226,6 +238,12 @@ Module3.controller("loginController", [
 						$scope.userSuccess = true;
 						document.getElementById("Scope2").setAttribute("value",true);
 						role = 'user';
+					}
+					else
+					{
+						alert("Login Failed..");
+						$scope.user = null;
+						$scope.loginform.$setPristine();
 					}
 					a = $('#Scope2').val();
 					//alert(a);

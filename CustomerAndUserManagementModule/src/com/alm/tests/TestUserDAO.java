@@ -2,6 +2,10 @@ package com.alm.tests;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
+import org.junit.After;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,13 +25,29 @@ public class TestUserDAO {
 	@Qualifier("UserDAO")
 	private IUserDAO userdao;
 
-	private static UserPOJO user;
+	private UserPOJO user;
+	private UserPOJO userafter;
 
 	@BeforeClass
 	public static void beforeClass() {
-		user = new UserPOJO();
-		user.setUsername("mee");
+		//user = new UserPOJO();
+		//user.setUsername("mee");
+		System.out.println("Inside beforeclass....");
 	}
+	
+	@Before
+    public void setUp() throws ALMException{
+        System.out.println("@Before - setUp");        
+        ArrayList<UserPOJO> list = userdao.getAllUsers();
+        user = list.get(0);
+        userafter = list.get(0);
+    }
+	
+	@After
+    public void tearDown() {
+        System.out.println("@After - tearDown");
+       userdao.addUser(userafter);
+    }
 
 	@Test
 	public void testAddUser() {
@@ -58,6 +78,7 @@ public class TestUserDAO {
 
 	@Test
 	public void testRemoveUser() {
-		assertTrue(userdao.removeUser(user));
+		//assertTrue(userdao.removeUser(user));
+		assertFalse(userdao.removeUser(user));
 	}
 }
