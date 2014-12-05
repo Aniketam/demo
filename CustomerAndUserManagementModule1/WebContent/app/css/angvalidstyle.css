@@ -1,0 +1,15 @@
+@CHARSET "ISO-8859-1";
+ .errordiv .ng-valid
+    {
+      border: solid green 3px;
+    }
+
+    .errordiv .ng-invalid
+    {
+      border: solid red 10px;
+    }
+
+    .errordiv .invalidItem
+    {
+      border: dashed red 2px;
+    }

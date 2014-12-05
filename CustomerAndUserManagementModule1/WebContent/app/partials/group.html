@@ -1,0 +1,38 @@
+<div class="outer">
+	<div class="container">
+		<h2 class="title">Group</h2>
+		<div class="main">
+			<form name="roleform" class="subform">
+				<table class="main_table">
+					<tbody>
+
+						<tr class="odd">
+							<td class="titletd"><span class="subtitle">Name: </span></td>
+							<td><input class="subinput" name="name"
+								data-ng-model="group.name" /></td>
+						</tr>
+						<tr class="even">
+							<td class="titletd"><span class="subtitle">Description:
+							</span></td>
+							<td><input class="subinput" name="description"
+								data-ng-model="group.description" /></td>
+						</tr>
+						<tr class="odd">
+							<td class="titletd"><span class="subtitle">Status: </span></td>
+							<td><input type="radio" name="status"
+								data-ng-model="group.status" value="active" />Active <input
+								type="radio" name="status" data-ng-model="group.status"
+								value="inactive" />InActive</td>
+						</tr>
+						<tr>
+							<td class="titletd"></td>
+							<td><input type="submit" value="submit" class="subbutton"
+								data-ng-click="submitGroupForm()" /> <input type="reset"
+								value="Reset" class="subbutton" class="subbutton"/></td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+		</div>
+	</div>
+</div>
